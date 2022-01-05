@@ -4,11 +4,11 @@ import time
 import os
 import threading
 import argparse
-
+import Server_list
 MAX_BYTES = 1024
-is_alive = 0
+lock = threading.Lock()
 
-def server(host,port,delay):
+def server(host,port):
 
     sock = socket.socket(socket.AF_INET,socket.SOCK_DGRAM)
     sock.bind((host,port))
@@ -16,19 +16,33 @@ def server(host,port,delay):
     while True:
         #print('test')
         data,addr = sock.recvfrom(MAX_BYTES)
+        with lock:
+            servers.active(addr)
         print('recieve %s:%s' % addr, data.decode('utf8'))
 
+def timesup():
+    while True:
+        time.sleep(delay)
+        with lock:
+            servers.check()
 
-
+servers=Server_list()
+delay=0
 def main():
     #server('0.0.0.0', 5000, 5)
+    
     parse = argparse.ArgumentParser(description='Listen to a port and excute a file')
     parse.add_argument('-H',nargs='?',default='0.0.0.0',const='0.0.0.0')
     parse.add_argument('-P',nargs='?',default=0,const=0,type=int)
-    parse.add_argument('-D',nargs='?',default=5,const=5,type=int)
+    parse.add_argument('-D',nargs='?',default=3600,const=3600,type=int)
     result = parse.parse_args()
     print(result.H,result.P,result.D)
-    server(result.H,result.P,result.D)
+    delay = result.D
+    client = threading.Thread(target=timesup)
+    client.setDaemon(True)
+    client.start()
+
+    server(result.H,result.P)
 
 
 
