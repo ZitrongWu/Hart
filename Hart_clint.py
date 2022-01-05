@@ -6,14 +6,10 @@ import time
 def client(host,port,delay):
     udp_sock = socket.socket(socket.AF_INET,socket.SOCK_DGRAM)
     while True:
-        try:
-            udp_sock.connect((host,port))
-            #udp_sock.sendto('2333',address=(host,port))
-            udp_sock.send('2333'.encode('ascii'))
-        except:
-            pass
-        finally:
-            time.sleep(delay)
+        #udp_sock.connect((host,port))
+        udp_sock.sendto('2333',address=(host,port))
+        #udp_sock.send('2333'.encode('ascii'))
+        time.sleep(delay)
 
 
 def main():    
