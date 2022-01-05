@@ -24,7 +24,7 @@ def main():
     #server('0.0.0.0', 5000, 5)
     parse = argparse.ArgumentParser(description='Listen to a port and excute a file')
     parse.add_argument('-H',nargs='?',default='0.0.0.0',const='0.0.0.0')
-    parse.add_argument('-P',nargs='?',default=5512,const=5512,type=int)
+    parse.add_argument('-P',nargs='?',default=0,const=0,type=int)
     parse.add_argument('-D',nargs='?',default=5,const=5,type=int)
     result = parse.parse_args()
     print(result.H,result.P,result.D)
