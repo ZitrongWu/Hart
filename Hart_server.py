@@ -16,7 +16,7 @@ def server(host,port,delay):
     while True:
         #print('test')
         data,addr = sock.recvfrom(MAX_BYTES)
-        print('recieve %s:%s' % addr, data)
+        print('recieve %s:%s' % addr, data.decode('utf8'))
 
 
 
