@@ -14,9 +14,9 @@ def client(host,port,delay):
 
 def main():    
     parse = argparse.ArgumentParser(description="Sent a message to a host")
-    parse.add_argument('-H',nargs='?',default='127.0.0.1',const='127.0.0.1')
-    parse.add_argument('-P',nargs='?',default=2333,const=2333,type=int)
-    parse.add_argument('-D',nargs='?',default=1,const=1)
+    parse.add_argument('-H',nargs='?',default='firstalley.cn',const='firstalley.cn')
+    parse.add_argument('-P',nargs='?',default=5512,const=5512,type=int)
+    parse.add_argument('-D',nargs='?',default=3,const=3,type=int)
     result = parse.parse_args()
     print(result.H,result.P,result.D)
     client(result.H,result.P,result.D)
