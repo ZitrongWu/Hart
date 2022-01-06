@@ -21,7 +21,7 @@ def server(host,port):
         print('recieve %s:%s' % addr, data.decode('utf8'))
 
 def timesup():
-    while True:
+    #while True:
         time.sleep(delay)
         with lock:
             servers.check()
