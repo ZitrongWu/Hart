@@ -5,10 +5,10 @@ import time
 
 def client(host,port,delay,massage):
     udp_sock = socket.socket(socket.AF_INET,socket.SOCK_DGRAM)
-    udp_sock.sendto(massage.encode('utf8'),(host,port))
+
     while True:
         #udp_sock.connect((host,port))
-        udp_sock.sendto('Server online!'.encode('utf8'),(host,port))
+        udp_sock.sendto(massage.encode('utf8'),(host,port))
         #udp_sock.send('2333'.encode('ascii'))
         time.sleep(delay)
 

@@ -17,7 +17,7 @@ def server(host,port):
         #print('test')
         data,addr = sock.recvfrom(MAX_BYTES)
         with lock:
-            servers.active(addr)
+            servers.active(data.decode('utf8'))
         print('recieve %s:%s' % addr, data.decode('utf8'))
 
 def timesup():
@@ -27,10 +27,10 @@ def timesup():
             servers.check()
 
 servers=Server_list()
-delay=0
+
 def main():
     #server('0.0.0.0', 5000, 5)
-    
+    global delay
     parse = argparse.ArgumentParser(description='Listen to a port and excute a file')
     parse.add_argument('-H',nargs='?',default='0.0.0.0',const='0.0.0.0')
     parse.add_argument('-P',nargs='?',default=0,const=0,type=int)

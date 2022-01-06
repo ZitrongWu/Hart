@@ -14,6 +14,7 @@ class Server_list:
                 offlinelist.append(server)
             else:
                 self.list[server] = False
-            print(server)
-        for offline in offlinelist    
+            
+        for offline in offlinelist:
             self.list.pop(offline)
+        print(self.list.keys())
