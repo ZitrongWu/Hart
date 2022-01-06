@@ -4,7 +4,7 @@ import time
 import os
 import threading
 import argparse
-import Server_list
+from Server_list import Server_list
 MAX_BYTES = 1024
 lock = threading.Lock()
 
