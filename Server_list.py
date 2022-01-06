@@ -13,3 +13,4 @@ class Server_list:
                 self.list.pop(server)
             else:
                 self.list[server] = False
+            print(server)
