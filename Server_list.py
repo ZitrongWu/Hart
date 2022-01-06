@@ -23,6 +23,6 @@ class Server_list:
             urlstr = urlstr + url + "\n"
         listfile = open("../ssr_server_list","w")
         
-        listfile.write(urlstr)
+        listfile.write(urlstr.encode('utf8'))
 
         listfile.close()
