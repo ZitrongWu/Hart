@@ -25,6 +25,6 @@ class Server_list:
             urlstr = urlstr + url + "\n"
         listfile = codecs.open("../ssr_server_list","w",encoding='utf-8')
         
-        listfile.write(base64.b64encode(urlstr))
+        listfile.write(base64.b64encode(urlstr.encode('utf-8')))
 
         listfile.close()
