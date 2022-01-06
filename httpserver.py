@@ -59,7 +59,7 @@ class HTTPServer(object):
         print("response data:", response)
 
         # 向客户端返回响应数据
-        client_socket.send(bytes(response, "utf-8"))
+        client_socket.send(response.encode('utf-8'))
 
         # 关闭客户端连接
         client_socket.close()
