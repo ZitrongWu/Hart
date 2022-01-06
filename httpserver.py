@@ -2,7 +2,7 @@
 
 import socket
 import re
-
+import codecs
 from multiprocessing import Process
 
 # 设置静态文件根目录
@@ -41,7 +41,7 @@ class HTTPServer(object):
 
         # 打开文件，读取内容
         try:
-            file = open(HTML_ROOT_DIR + file_name, "r",encoding='utf-8')
+            file = codecs.open(HTML_ROOT_DIR + file_name, "r",encoding='utf-8')
         except IOError:
             response_start_line = "HTTP/1.1 404 Not Found\r\n"
             response_headers = "Server: My server\r\n"
