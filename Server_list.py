@@ -15,4 +15,5 @@ class Server_list:
             else:
                 self.list[server] = False
             print(server)
-        self.list.pop(offlinelist)
+        for offline in offlinelist    
+            self.list.pop(offline)
