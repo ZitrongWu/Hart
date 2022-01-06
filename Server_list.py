@@ -1,3 +1,4 @@
+import codecs
 class Server_list:
 
     def __init__(self) -> None:
@@ -21,7 +22,7 @@ class Server_list:
         urlstr = ""
         for url,state in self.list.items():
             urlstr = urlstr + url + "\n"
-        listfile = open("../ssr_server_list","w",encoding='utf-8')
+        listfile = codecs.open("../ssr_server_list","w",encoding='utf-8')
         
         listfile.write(urlstr)
 
