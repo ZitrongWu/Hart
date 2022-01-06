@@ -41,7 +41,7 @@ class HTTPServer(object):
 
         # 打开文件，读取内容
         try:
-            file = open(HTML_ROOT_DIR + file_name, "rb")
+            file = open(HTML_ROOT_DIR + file_name, "r",encoding='utf-8')
         except IOError:
             response_start_line = "HTTP/1.1 404 Not Found\r\n"
             response_headers = "Server: My server\r\n"
@@ -53,7 +53,7 @@ class HTTPServer(object):
             # 构造响应数据
             response_start_line = "HTTP/1.1 200 OK\r\n"
             response_headers = "Server: My server\r\n"
-            response_body = file_data.decode("utf-8")
+            response_body = file_data
 
         response = response_start_line + response_headers + "\r\n" + response_body
         print("response data:", response)
