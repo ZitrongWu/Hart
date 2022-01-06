@@ -1,34 +1,3 @@
-Skip to content
-Search or jump to…
-Pull requests
-Issues
-Marketplace
-Explore
- 
-@ZitrongWu 
-ToyoDAdoubi
-/
-doubi
-Public
-Code
-Issues
-11
-Pull requests
-Actions
-Projects
-Wiki
-Security
-Insights
-doubi/ssr.sh
-@uwtom
-uwtom Update ssr.sh
-…
-Latest commit aa94dd7 on 11 Dec 2019
- History
- 2 contributors
-@ToyoDAdoubiBackup@uwtom
-1526 lines (1506 sloc)  59.7 KB
-   
 #!/usr/bin/env bash
 PATH=/bin:/sbin:/usr/bin:/usr/sbin:/usr/local/bin:/usr/local/sbin:~/bin
 export PATH
