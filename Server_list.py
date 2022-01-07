@@ -23,7 +23,7 @@ class Server_list:
         urlstr = ""
         for url,state in self.list.items():
             urlstr = urlstr + url + "\n"
-        listfile = codecs.open("../ssr_server_list","w",encoding='utf-8')
+        listfile = codecs.open("../ssr/ssr_server_list","w",encoding='utf-8')
         
         listfile.write(base64.b64encode(urlstr.encode('utf-8')).decode('utf-8'))
 
