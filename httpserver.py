@@ -81,10 +81,10 @@ import http.server, ssl
 server_ip = '0.0.0.0'
 server_port = 5510
 server_addr = (server_ip,server_port)
-server_cert = '../CRF/cert.pem'
-server_key = '../CRF/privkey.pem'
+server_cert = '/CRF/cert.pem'
+server_key = '/CRF/privkey.pem'
 
-httpd = http.server.HTTPServer(server_addr, http.server.SimpleHTTPRequestHandler)
+httpd = http.server.HTTPServer(server_addr, http.server.SimpleHTTPRequestHandler(directory="/ssr/ssr_server_list"))
 httpd.socket = ssl.wrap_socket(httpd.socket,
                                 server_side=True,
                                 certfile=server_cert,
